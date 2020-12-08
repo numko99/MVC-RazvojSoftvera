@@ -1,0 +1,62 @@
+﻿@*@using System;
+    @using System.Collections.Generic;
+    @using System.Linq;
+    @using System.Web;
+    @using System.Web.Mvc;*@
+
+
+<html>
+
+<style type="text/css">
+    #mojID {
+        padding: 5px;
+        margin: 5px 5px 5px 0px;
+        width: 200px;
+    }
+
+    form {
+        float: left;
+    }
+
+    #buton {
+        float: right;
+        margin: 5px;
+    }
+</style>
+<body>
+    @{
+        var studenti = (List<SeminarskiTemp.Models.Student>)ViewData["studenti"];
+
+    }
+    <form>
+
+        <input name="student" id="mojID" value="@Context.Request.QueryString["student"]" />
+        <input type="submit" value="Trazi" class="btn btn-info" />
+
+    </form>
+    <button type="button" id="buton" class="btn btn-info" onclick="window.location='/Seminarski/Uredi'">Dodaj Studenta</button>
+    <table class="table">
+        <thead class="thead-dark">
+            <tr>
+                <th>Ime i prezime</th>
+
+
+            </tr>
+        </thead>
+        @foreach (var item in studenti)
+        {
+            <tr>
+                <td>@item.Ime @item.Prezime</td>
+                <th style="color:blue;"><span onclick="window.location='/Seminarski/Detalji?student='+@item.ID" style="cursor:pointer">Detalji</span></th>
+                <th style="color:red">  <span onclick="window.location='/Seminarski/Obrisi?ID='+@item.ID" style="cursor:pointer">Obrisi</span></th>
+                <th style="color:yellow">  <span onclick="window.location='/Seminarski/Uredi?StudentID='+@item.ID" style="cursor:pointer">Uredi</span></th>
+            </tr>
+        }
+    </table>
+
+
+
+
+</body>
+</html>
+

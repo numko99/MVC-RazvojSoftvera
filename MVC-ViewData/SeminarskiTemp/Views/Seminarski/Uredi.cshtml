@@ -1,0 +1,75 @@
+﻿<h3 class="text-success">Dodavanje novog studenta</h3>
+@{
+    var student = (SeminarskiTemp.Models.Student)ViewData["student"];
+    var opstina = (List<SeminarskiTemp.Models.Opstina>)ViewData["opstine"];
+    var fakulteti = (List<SeminarskiTemp.Models.Fakultet>)ViewData["fakulteti"];
+
+    
+
+}
+<style>
+    form input, select {
+        margin: 2px 10px 10px 0px;
+        width: 200px;   
+        padding: 5px;
+    }
+</style>
+<form action="/Seminarski/Snimi">
+    <div style="display:none">
+        <label>id</label><br />
+        <input type="text" name="id" value="@student.ID" />
+    </div>
+    <div>
+        <label>Ime</label><br />
+        <input type="text" name="Ime" value="@student.Ime" />
+    </div>
+
+    <div>
+        <label>Prezime</label><br />
+        <input type="text" name="Prezime" value="@student.Prezime" />
+    </div>
+    <div>
+        <label>Datum Rodjenja</label><br />
+        <input type="date" name="Datum" value="1999-03-03"/>
+    </div>
+    <div>
+        <label>Opstina</label><br />
+        <select name="Opstina">
+            @foreach (var item in opstina)
+            {
+                if (item.ID == student.OpstinaID)
+                {
+                    <option selected value="@item.ID">@item.Naziv</option>
+                }
+                else
+                {
+                      <option value="@item.ID">@item.Naziv</option>
+                }
+              
+            }
+        </select>
+
+    </div>
+    <div>
+        <label>Fakultet</label><br />
+        <select name="Fakultet">
+            @foreach (var item in fakulteti)
+            {
+                if (item.ID == student.OpstinaID)
+                {
+                    <option selected value="@item.ID">@item.Naziv</option>
+                }
+                else
+                {
+                     <option value="@item.ID">@item.Naziv</option>
+                }
+                }
+            }
+        </select>
+    </div>
+    <div>
+        <label>Broj Indeksa</label><br />
+        <input type="text" name="Indeks" value="@student.BrojIndeksa" />
+    </div>
+    <input type="submit" name="Snimi" value="Sacuvaj" class="btn-success" />
+</form>
