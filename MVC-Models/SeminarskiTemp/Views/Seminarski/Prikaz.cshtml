@@ -1,8 +1,9 @@
-﻿@*@using System;
+﻿@using System;
     @using System.Collections.Generic;
     @using System.Linq;
     @using System.Web;
-    @using System.Web.Mvc;*@
+    @using System.Web.Mvc;
+    @using SeminarskiTemp.Models
 
 
 <html>
@@ -25,12 +26,13 @@
 </style>
 <body>
     @{
-        var studenti = (List<SeminarskiTemp.Models.Student>)ViewData["studenti"];
-
+        //var studenti = (List<SeminarskiTemp.EntityModels.Student>)ViewData["studenti"];
+        //var q = ViewData["q"];
+        @model StudentPrikazVM
     }
     <form>
 
-        <input name="student" id="mojID" value="@Context.Request.QueryString["student"]" />
+        <input name="student" id="mojID" value="@Model.q" />
         <input type="submit" value="Trazi" class="btn btn-info" />
 
     </form>
@@ -43,7 +45,7 @@
 
             </tr>
         </thead>
-        @foreach (var item in studenti)
+        @foreach (var item in Model.studenti)
         {
             <tr>
                 <td>@item.Ime @item.Prezime</td>

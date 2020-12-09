@@ -240,10 +240,15 @@
     <Compile Include="Migrations\20201105143856_BazaSeminarski1.designer.cs">
       <DependentUpon>20201105143856_BazaSeminarski1.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\20201209002926_MVC_Modeli.cs" />
+    <Compile Include="Migrations\20201209002926_MVC_Modeli.designer.cs">
+      <DependentUpon>20201209002926_MVC_Modeli.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\MojDBcontextModelSnapshot.cs" />
-    <Compile Include="Models\Fakultet.cs" />
-    <Compile Include="Models\Opstina.cs" />
-    <Compile Include="Models\Student.cs" />
+    <Compile Include="EntityModels\Fakultet.cs" />
+    <Compile Include="EntityModels\Opstina.cs" />
+    <Compile Include="EntityModels\Student.cs" />
+    <Compile Include="Models\StudentPrikazVM.cs" />
     <Compile Include="MojDBcontext.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

@@ -1,5 +1,5 @@
 ﻿using Microsoft.EntityFrameworkCore;
-using SeminarskiTemp.Models;
+using SeminarskiTemp.EntityModels;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -17,7 +17,7 @@ namespace SeminarskiTemp
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
             optionsBuilder.UseSqlServer(@" Server=.;
-                                        Database=BazaSeminarski1;   
+                                        Database=MVC_Modeli;   
                                         Trusted_Connection=true;
                                         MultipleActiveResultSets=true; ");
 

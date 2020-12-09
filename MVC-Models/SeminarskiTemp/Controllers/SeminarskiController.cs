@@ -1,4 +1,5 @@
 ﻿using Microsoft.EntityFrameworkCore;
+using SeminarskiTemp.EntityModels;
 using SeminarskiTemp.Models;
 using System;
 using System.Collections.Generic;
@@ -20,9 +21,13 @@ namespace SeminarskiTemp.Controllers
             MojDBcontext dBcontext = new MojDBcontext();
             var studenti = dBcontext.Students.Include("Opstina").Include("Fakultet").
                 Where(x => student == null || x.Ime.StartsWith(student)).ToList();
-            ViewData["studenti"] = studenti;
+            //ViewData["studenti"] = studenti;
+            //ViewData["q"] = student;
 
-            return View();
+            StudentPrikazVM m = new StudentPrikazVM();
+            m.studenti = studenti;
+            m.q = student;
+            return View(m);
         }
 
     
