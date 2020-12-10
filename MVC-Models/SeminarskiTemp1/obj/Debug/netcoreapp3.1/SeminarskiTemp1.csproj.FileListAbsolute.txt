@@ -164,3 +164,5 @@ C:\Users\Admir\GitHub\MVC-RazvojSoftvera\MVC-Models\SeminarskiTemp1\obj\Debug\ne
 C:\Users\Admir\GitHub\MVC-RazvojSoftvera\MVC-Models\SeminarskiTemp1\obj\Debug\netcoreapp3.1\SeminarskiTemp1.dll
 C:\Users\Admir\GitHub\MVC-RazvojSoftvera\MVC-Models\SeminarskiTemp1\obj\Debug\netcoreapp3.1\SeminarskiTemp1.pdb
 C:\Users\Admir\GitHub\MVC-RazvojSoftvera\MVC-Models\SeminarskiTemp1\obj\Debug\netcoreapp3.1\SeminarskiTemp1.genruntimeconfig.cache
+C:\Users\Admir\GitHub\MVC-RazvojSoftvera\MVC-Models\SeminarskiTemp1\obj\Debug\netcoreapp3.1\Razor\Views\Soba\Prikazi.cshtml.g.cs
+C:\Users\Admir\GitHub\MVC-RazvojSoftvera\MVC-Models\SeminarskiTemp1\obj\Debug\netcoreapp3.1\Razor\Views\Seminarski\Stanovanje.cshtml.g.cs

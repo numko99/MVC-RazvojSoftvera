@@ -2,15 +2,17 @@
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using SeminarskiTemp1.EF;
 
 namespace SeminarskiTemp1.Migrations
 {
     [DbContext(typeof(MojDBContext))]
-    partial class MojDBContextModelSnapshot : ModelSnapshot
+    [Migration("20201210124516_stanovanje")]
+    partial class stanovanje
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder

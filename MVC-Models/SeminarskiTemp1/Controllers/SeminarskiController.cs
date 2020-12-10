@@ -111,7 +111,22 @@ namespace SeminarskiTemp1.Controllers
 
             return View(studenti);
         }
-
+        public IActionResult Stanovanje(int StudentID)
+        {
+            MojDBContext dBContext = new MojDBContext();
+            StudentStanovanjeVM student = dBContext.Stanovanjes.Where(a => a.studentID == StudentID).Select(x => new StudentStanovanjeVM
+            {
+                ImeStudenta=x.student.Ime+" "+x.student.Prezime,
+                BrojSobe = x.soba.BrojSobe,
+                AkademskaGodina = x.AkademskaGodina
+            }).Single();
+            var studenti = dBContext.Stanovanjes.Where(a=>student.BrojSobe==a.soba.BrojSobe && a.student.ID!=StudentID).Select(x => new StudentStanovanjeVM.Row
+            {
+                Imecimera = x.student.Ime +" "+ x.student.Prezime+" "
+            }).ToList();
+            student.cimeri = studenti;
+            return View(student);
+        }
 
 
         public ActionResult Obrisi(int ID)

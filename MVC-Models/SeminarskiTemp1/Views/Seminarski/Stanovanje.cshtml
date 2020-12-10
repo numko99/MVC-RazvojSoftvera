@@ -1,0 +1,29 @@
+﻿@model StudentStanovanjeVM
+@{
+    Layout = null;
+}
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>Ime Studenta</th>
+            <th>Broj Sobe</th>
+            <th>Akademska godina</th>
+            <th>Cimeri</th>
+        </tr>
+    </thead>
+    <tr>
+        <th>@Model.ImeStudenta</th>
+        <th>@Model.BrojSobe</th>
+        <th>@Model.AkademskaGodina</th>
+        <th>
+            @{
+                foreach (var item in Model.cimeri)
+                {
+                    @item.Imecimera<br />
+                }
+                }
+            </th>
+    </tr>
+    
+</table>

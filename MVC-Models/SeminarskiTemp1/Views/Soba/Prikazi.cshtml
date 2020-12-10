@@ -1,0 +1,24 @@
+﻿
+@model SobaPrikazVM
+
+<table class="table">
+
+    <thead>
+        <tr>
+            <th>Broj Sobe</th>
+            <th>Broj Kreveta</th>
+        </tr>
+    </thead>
+    <tr>
+        @{
+            foreach (SobaPrikazVM.Row item in Model.sobe)
+            {
+            <tr>
+                <th>@item.BrojSobe</th>
+                <th>@item.BrojKreveta</th>
+            </tr>
+        }
+        }
+        </tr>
+
+    </table>

@@ -14,8 +14,9 @@
         float: right;
         margin: 5px;
     }
-    span{
-        cursor:pointer
+
+    span {
+        cursor: pointer
     }
 </style>
 <body>
@@ -30,6 +31,7 @@
 
     </form>
     <button type="button" id="buton" class="btn btn-dark" onclick="window.location='/Seminarski/Uredi'">Dodaj Studenta</button>
+    <button type="button" id="buton" class="btn btn-dark" onclick="window.location='/Soba/Prikazi'">Sobe</button>
     <table class="table">
         <thead class="thead">
             <tr>
@@ -44,34 +46,38 @@
                 <td>@item.Ime @item.Prezime</td>
                 <th style="color:blue;"><span onclick=PrikaziStudenta(@item.ID) class="btn btn-info">Detalji</span></th>
                 <th style="color:red">  <span onclick="window.location='/Seminarski/Obrisi?ID='+@item.ID" class="btn btn-danger">Obrisi</span></th>
-                <th style="color:yellow">  <span onclick="window.location='/Seminarski/Uredi?StudentID='+@item.ID"class="btn btn-primary">Uredi</span></th>
+                <th style="color:yellow">  <span onclick="window.location='/Seminarski/Uredi?StudentID='+@item.ID" class="btn btn-primary">Uredi</span></th>
+
+
             </tr>
+
+
         }
     </table>
 
-
     <div id="ajaxTabela">
-        
+
     </div>
+
 
 </body>
 <script>
 
-function PrikaziStudenta(StudentID) {
-            
-            var url = "/Seminarski/Detalji?student=" + StudentID;
-            var zahtjev = new XMLHttpRequest();
-            zahtjev.onload = function () {
-                if (zahtjev.status === 200) {
-                    document.getElementById("ajaxTabela").innerHTML = zahtjev.responseText;
-                } else {
+    function PrikaziStudenta(StudentID) {
 
-                }
-            };
-            zahtjev.open("GET", url, true);
-            zahtjev.send();
+        var url = "/Seminarski/StanovanJe?StudentID=" + StudentID;
+        var zahtjev = new XMLHttpRequest();
+        zahtjev.onload = function () {
+            if (zahtjev.status === 200) {
+                document.getElementById("ajaxTabela").innerHTML = zahtjev.responseText;
+            } else {
 
-        }
+            }
+        };
+        zahtjev.open("GET", url, true);
+        zahtjev.send();
+
+    }
 </script>
 
 

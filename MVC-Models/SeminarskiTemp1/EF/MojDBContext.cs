@@ -12,6 +12,8 @@ namespace SeminarskiTemp1.EF
         public DbSet<Student> Students { get; set; }
         public DbSet<Opstina> Opstinas { get; set; }
         public DbSet<Fakultet> Fakultets { get; set; }
+        public DbSet<Soba> Sobas { get; set; }
+        public DbSet<Stanovanje> Stanovanjes { get; set; }
 
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
