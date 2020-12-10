@@ -47,24 +47,24 @@ namespace SeminarskiTemp1.Controllers
                 Value = a.ID.ToString()
             }).ToList();
 
-            
+
             StudentDodajVM studenti = StudentID == 0 ? new StudentDodajVM() : mojDBcontext.Students.Where(a => StudentID == a.ID).
                 Select(a => new StudentDodajVM
-            {
+                {
 
-                ID = a.ID,
-                Ime = a.Ime,
-                Prezime = a.Prezime,
-                OpstinaID = a.OpstinaID,
-                FakultetID = a.FakultetID,
-                BrojIndeksa = a.BrojIndeksa,
-                Datum= Convert.ToDateTime(a.DatumRodjenja)
-            }).Single();
+                    ID = a.ID,
+                    Ime = a.Ime,
+                    Prezime = a.Prezime,
+                    OpstinaID = a.OpstinaID,
+                    FakultetID = a.FakultetID,
+                    BrojIndeksa = a.BrojIndeksa,
+                    Datum = Convert.ToDateTime(a.DatumRodjenja)
+                }).Single();
             studenti.Opstine = opstine;
             studenti.Fakulteti = fakulteti;
             return View(studenti);
         }
-       
+
         public ActionResult Snimi(StudentDodajVM admir)
         {
             MojDBContext dbContext = new MojDBContext();
@@ -107,7 +107,7 @@ namespace SeminarskiTemp1.Controllers
                     BrojIndeksa = x.BrojIndeksa
 
                 }).Single();
-           
+            
 
             return View(studenti);
         }

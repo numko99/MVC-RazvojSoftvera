@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "A4lkTWTk0ZRTic8Wm9Uz3S/aWFoY7Q3Z9YEhTOt9kX62xFdkBWEg+tKhugoMWUXXFZngWeEMGatCT8H+sAmLxg==",
+  "dgSpecHash": "4CB13H9ohlDOuLPbebsLS0XRvxbdG1Tbcu3paWNoqrKga0svldIv8nlelKoANse0XAUU463ywHg/0lvNyreM8A==",
   "success": true,
-  "projectFilePath": "C:\\Users\\Admir\\source\\repos\\SeminarskiTemp1\\SeminarskiTemp1\\SeminarskiTemp1.csproj",
+  "projectFilePath": "C:\\Users\\Admir\\GitHub\\MVC-RazvojSoftvera\\MVC-Models\\SeminarskiTemp1\\SeminarskiTemp1.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\Admir\\.nuget\\packages\\humanizer.core\\2.8.26\\humanizer.core.2.8.26.nupkg.sha512",
     "C:\\Users\\Admir\\.nuget\\packages\\microsoft.csharp\\4.7.0\\microsoft.csharp.4.7.0.nupkg.sha512",

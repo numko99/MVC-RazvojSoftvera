@@ -1,7 +1,4 @@
 ﻿
-
-<html>
-
 <style type="text/css">
     #mojID {
         padding: 5px;
@@ -17,20 +14,22 @@
         float: right;
         margin: 5px;
     }
+    span{
+        cursor:pointer
+    }
 </style>
 <body>
     @{
-        //var studenti = (List<SeminarskiTemp.EntityModels.Student>)ViewData["studenti"];
-        //var q = ViewData["q"];
+
         @model StudentPrikazVM
     }
     <form>
 
         <input name="student" id="mojID" value="@Model.q" />
-        <input type="submit" value="Trazi" class="btn btn-info" />
+        <input type="submit" value="Trazi" class="btn btn-dark" />
 
     </form>
-    <button type="button" id="buton" class="btn btn-info" onclick="window.location='/Seminarski/Uredi'">Dodaj Studenta</button>
+    <button type="button" id="buton" class="btn btn-dark" onclick="window.location='/Seminarski/Uredi'">Dodaj Studenta</button>
     <table class="table">
         <thead class="thead">
             <tr>
@@ -43,16 +42,36 @@
         {
             <tr>
                 <td>@item.Ime @item.Prezime</td>
-                <th style="color:blue;"><span onclick="window.location='/Seminarski/Detalji?student='+@item.ID" style="cursor:pointer">Detalji</span></th>
-                <th style="color:red">  <span onclick="window.location='/Seminarski/Obrisi?ID='+@item.ID" style="cursor:pointer">Obrisi</span></th>
-                <th style="color:yellow">  <span onclick="window.location='/Seminarski/Uredi?StudentID='+@item.ID" style="cursor:pointer">Uredi</span></th>
+                <th style="color:blue;"><span onclick=PrikaziStudenta(@item.ID) class="btn btn-info">Detalji</span></th>
+                <th style="color:red">  <span onclick="window.location='/Seminarski/Obrisi?ID='+@item.ID" class="btn btn-danger">Obrisi</span></th>
+                <th style="color:yellow">  <span onclick="window.location='/Seminarski/Uredi?StudentID='+@item.ID"class="btn btn-primary">Uredi</span></th>
             </tr>
         }
     </table>
 
 
-
+    <div id="ajaxTabela">
+        
+    </div>
 
 </body>
-</html>
+<script>
+
+function PrikaziStudenta(StudentID) {
+            
+            var url = "/Seminarski/Detalji?student=" + StudentID;
+            var zahtjev = new XMLHttpRequest();
+            zahtjev.onload = function () {
+                if (zahtjev.status === 200) {
+                    document.getElementById("ajaxTabela").innerHTML = zahtjev.responseText;
+                } else {
+
+                }
+            };
+            zahtjev.open("GET", url, true);
+            zahtjev.send();
+
+        }
+</script>
+
 

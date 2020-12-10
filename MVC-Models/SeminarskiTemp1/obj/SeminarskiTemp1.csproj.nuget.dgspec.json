@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\Admir\\source\\repos\\SeminarskiTemp1\\SeminarskiTemp1\\SeminarskiTemp1.csproj": {}
+    "C:\\Users\\Admir\\GitHub\\MVC-RazvojSoftvera\\MVC-Models\\SeminarskiTemp1\\SeminarskiTemp1.csproj": {}
   },
   "projects": {
-    "C:\\Users\\Admir\\source\\repos\\SeminarskiTemp1\\SeminarskiTemp1\\SeminarskiTemp1.csproj": {
+    "C:\\Users\\Admir\\GitHub\\MVC-RazvojSoftvera\\MVC-Models\\SeminarskiTemp1\\SeminarskiTemp1.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Admir\\source\\repos\\SeminarskiTemp1\\SeminarskiTemp1\\SeminarskiTemp1.csproj",
+        "projectUniqueName": "C:\\Users\\Admir\\GitHub\\MVC-RazvojSoftvera\\MVC-Models\\SeminarskiTemp1\\SeminarskiTemp1.csproj",
         "projectName": "SeminarskiTemp1",
-        "projectPath": "C:\\Users\\Admir\\source\\repos\\SeminarskiTemp1\\SeminarskiTemp1\\SeminarskiTemp1.csproj",
+        "projectPath": "C:\\Users\\Admir\\GitHub\\MVC-RazvojSoftvera\\MVC-Models\\SeminarskiTemp1\\SeminarskiTemp1.csproj",
         "packagesPath": "C:\\Users\\Admir\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Admir\\source\\repos\\SeminarskiTemp1\\SeminarskiTemp1\\obj\\",
+        "outputPath": "C:\\Users\\Admir\\GitHub\\MVC-RazvojSoftvera\\MVC-Models\\SeminarskiTemp1\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\Admir\\AppData\\Roaming\\NuGet\\NuGet.Config",
