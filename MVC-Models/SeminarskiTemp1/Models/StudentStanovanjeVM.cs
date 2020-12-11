@@ -7,6 +7,7 @@ namespace SeminarskiTemp1.Models
 {
     public class StudentStanovanjeVM
     {
+        public int ID { get; set; }
         public string ImeStudenta { get; set; }
         public int BrojSobe { get; set; }
         public string AkademskaGodina { get; set; }

@@ -111,11 +111,36 @@ namespace SeminarskiTemp1.Controllers
 
             return View(studenti);
         }
+        public IActionResult UrediStanovanje(int StanovanjeID)
+        {
+            MojDBContext dBContext = new MojDBContext();
+            List<SelectListItem> sobe = dBContext.Sobas.Select(a => new SelectListItem
+            {
+                Text = a.BrojSobe.ToString(),
+                Value = a.ID.ToString()
+            }).ToList();
+            StanovanjeUrediVM m = dBContext.Stanovanjes.Where(a => StanovanjeID == a.ID).Select(a => new StanovanjeUrediVM
+            {
+
+                ID = a.ID,
+                ImePrezime = a.student.Ime + ' ' + a.student.Prezime,
+                StudentID=a.student.ID,
+                SobaID=a.sobaID,
+                AkademskaGodina=a.AkademskaGodina
+
+            }).Single();
+            m.sobe = sobe;
+
+
+            return View(m);
+        }
         public IActionResult Stanovanje(int StudentID)
         {
             MojDBContext dBContext = new MojDBContext();
+          
             StudentStanovanjeVM student = dBContext.Stanovanjes.Where(a => a.studentID == StudentID).Select(x => new StudentStanovanjeVM
             {
+                ID=x.ID,
                 ImeStudenta=x.student.Ime+" "+x.student.Prezime,
                 BrojSobe = x.soba.BrojSobe,
                 AkademskaGodina = x.AkademskaGodina
@@ -127,7 +152,15 @@ namespace SeminarskiTemp1.Controllers
             student.cimeri = studenti;
             return View(student);
         }
-
+        public IActionResult SnimiStanovanje(StanovanjeUrediVM admir)
+        {
+            MojDBContext dBContext = new MojDBContext();
+            Stanovanje stanovanje = new Stanovanje();
+            stanovanje = dBContext.Stanovanjes.Find(admir.ID);
+            stanovanje.sobaID = admir.SobaID;
+            dBContext.SaveChanges();
+            return Redirect(url: "/Seminarski/Prikaz");
+        }
 
         public ActionResult Obrisi(int ID)
         {
@@ -142,10 +175,13 @@ namespace SeminarskiTemp1.Controllers
         }
         public ActionResult Poruka()
         {
-
-            return View();
+            StanovanjeDodajVM m = new StanovanjeDodajVM();
+            return View(m);
         }
 
-
+        public IActionResult DodajStanovanje()
+        {
+            return View();
+        }
     }
 }

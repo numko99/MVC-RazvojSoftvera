@@ -1,0 +1,50 @@
+﻿
+@model StanovanjeUrediVM
+@{
+    Layout = null;
+}
+<style>
+    .forma {
+        border: 2px solid lightgray;
+        border-radius: 5px;
+        
+        padding: 50px;
+        padding-left: 0px
+    }
+   .forma input{
+        padding:10px;
+        border-radius:10px;
+ 
+    }
+   .forma select{
+       padding:10px;
+        border-radius:10px;
+        margin-right:30px
+
+   }
+ 
+   .forma label{
+       padding:5px
+   }
+</style>
+
+    <form class="forma" asp-action="SnimiStanovanje" asp-controller="Seminarski">
+     
+            <input asp-for="ID" style="display:none" />
+            <input asp-for="StudentID" style="display:none" />
+
+            <label>Ime i Prezime</label>
+            <input asp-for="ImePrezime" disabled  style="background-color:white"/>
+
+            <label> Akademska godina</label>
+            <input asp-for="AkademskaGodina" disabled  style="background-color:white"/>
+
+            <label> Broj Sobe</label>
+            <select asp-for="SobaID" asp-items="@Model.sobe" style="width:150px">
+            </select>
+
+
+
+            <input type="submit" value="Submit" class="btn btn-danger" />
+    
+    </form>

@@ -1,6 +1,7 @@
 ﻿@model StudentStanovanjeVM
 @{
     Layout = null;
+
 }
 
 <table class="table">
@@ -10,6 +11,8 @@
             <th>Broj Sobe</th>
             <th>Akademska godina</th>
             <th>Cimeri</th>
+            <th>Uredi</th>
+
         </tr>
     </thead>
     <tr>
@@ -22,8 +25,9 @@
                 {
                     @item.Imecimera<br />
                 }
-                }
-            </th>
+            }
+        </th>
+        <th><button class="btn btn-primary" onclick=UrediStanovanje(@Model.ID)>Uredi</button></th>
     </tr>
-    
+
 </table>
